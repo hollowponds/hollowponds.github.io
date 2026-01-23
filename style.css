@@ -100,7 +100,7 @@ nav a.active {
 main {
   background: #ffffff;
   border-radius: 4px;
-  padding: 2rem 1.25rem 2.5rem;
+  padding: 2rem 4.25rem 2.5rem;
   text-align: center;
 }
 
@@ -366,6 +366,30 @@ h1 {
   color: #005fa3;
 }
 
+/* DLC - two-column layout on wider screens */
+@media (min-width: 768px) {
+  .dlc-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* left + right columns */
+    gap: 3rem; /* space between columns */
+  }
+
+  /* each column contains one header + its list */
+  .dlc-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dlc-column h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .dlc-column ul {
+    margin: 0 0 2rem 0;
+  }
+}
+
 /* blog */
 
 /* General article styling */
@@ -495,4 +519,124 @@ h1 {
 
 .blog-share a:hover i {
   color: #007acc;
+}
+
+
+/* =========================
+   ENHANCEMENT STYLES (REVISED)
+   ========================= */
+
+/* ---- Post card lift and shadow ---- */
+.post {
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ---- Highlights reverted to black on white ---- */
+.highlight,
+.section-title span {
+  background: #ffffff; /* white background */
+  color: #000000;      /* black text */
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+/* ---- Active nav link reverted ---- */
+nav a.active {
+  border-bottom-color: #000000;
+}
+
+/* ---- Blog share links hover ---- */
+.blog-share a:hover {
+  color: #000000;
+}
+
+.blog-share a i:hover {
+  color: #000000;
+}
+
+/* ---- Newsletter button reverted ---- */
+.newsletter button {
+  background-color: #ffffff; /* white */
+  color: #000000;            /* black text */
+  border: 2px solid #000000;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.newsletter button:hover {
+  background-color: #000000; /* invert on hover */
+  color: #ffffff;
+}
+
+/* ---- Social icons hover ---- */
+.social-icons a img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.15);
+  filter: brightness(1.1);
+}
+
+/* ---- Media radius and consistency ---- */
+.media,
+.blog-media img,
+.blog-media video,
+.blog-media iframe {
+  border-radius: 12px;
+}
+
+/* ---- Columns spacing ---- */
+.columns {
+  gap: 4rem;
+}
+
+/* ---- Newsletter spacing & shadow ---- */
+.newsletter {
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* ---- Typography improvement ---- */
+body, .blog-content p {
+  line-height: 1.7;
+}
+
+/* ---- Background overlay slightly less bright ---- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5); /* slightly less bright */
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ---- Smooth transitions for all images and video ---- */
+.media img,
+.media video,
+.blog-media img,
+.blog-media video,
+.blog-media iframe {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.media img:hover,
+.media video:hover,
+.blog-media img:hover,
+.blog-media video:hover {
+  transform: scale(1.02);
+  filter: brightness(1.02);
+}
+
+/* ---- Subtle font for paragraphs (optional) ---- */
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }

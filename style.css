@@ -5,6 +5,23 @@
   box-sizing: border-box;
 }
 
+.email-button {
+  font-weight: bold;
+  font-size: 125%;
+  text-decoration: none;
+  padding: 8px 14px;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.email-button:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   font-family:
